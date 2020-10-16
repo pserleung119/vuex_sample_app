@@ -4,15 +4,19 @@
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
       <h5 class="card-title">${{ item.price }}</h5>
-      <p class="card-text">{{ item.description }}</p>
-      <button @click="addToCart(item)" class="btn btn-primary">Add to cart</button>
+      <router-link :to="'/item/' + item.id" class="btn btn-info mr-2">Details</router-link>
+      <AddToCartBtn :item="item"/>
     </div>
   </div>
 </template>
 
 <script>
+import AddToCartBtn from './AddToCartBtn'
 
 export default {
+  components: {
+    AddToCartBtn
+  },
   props: {
     item: {
       type: Object,
@@ -29,7 +33,7 @@ export default {
 
 <style scoped>
   .card {
-    width: 14rem;
+    width: 16rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     background: #444444;

@@ -1,17 +1,37 @@
 import Item from '../../modules/item'
 
+function filterItemProperty(item) {
+  if (!item) {
+    return new Item()
+  }
+  return new Item(item.name, item.price)
+}
+
+function calculateTotalPrice(items) {
+  if (!items.length) {
+    return 0
+  }
+  let amount = 0
+  items.forEach((item) => {
+    amount += item.price
+  })
+
+  return amount
+}
+
 const state = {
   items: []
 }
 
 const getters = {
   cart: state => state.items,
-  count: state => state.items.length
+  count: state => state.items.length,
+  price: state => calculateTotalPrice(state.items)
 }
 
 const actions = {
   addItem ({ commit }, item = false) {
-    commit('addItem', item || new Item())
+    commit('addItem', filterItemProperty(item))
   },
   deleteItem ({ commit }, index = null) {
     commit('deleteItem', index)

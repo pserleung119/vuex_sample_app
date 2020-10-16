@@ -6,6 +6,7 @@
     </div>
   
     <h3 class="text-white mb-4">Item Count: {{ itemCount }}</h3>
+    <h3 class="text-white mb-4">Item Price: {{ totalPrice }}</h3>
     <div class="col d-flex flex-column justify-content-center">
       <CartItems v-for="(item, index) in items" v-bind:key="index" :item="item" :index="index"/>
     </div>
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import CartItems from '../components/CartItems'
+import CartItems from '../components/items/CartItems'
 
 export default {
   name: 'Index',
@@ -26,6 +27,9 @@ export default {
     },
     items() {
       return this.$store.getters.cart
+    },
+    totalPrice() {
+      return this.$store.getters.price
     }
   },
   methods: {

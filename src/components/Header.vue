@@ -27,6 +27,7 @@ export default {
   top: 0;
   height: 60px;
   background: #111111;
+  z-index: 1000;
 }
 
 a {

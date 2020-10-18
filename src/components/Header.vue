@@ -1,5 +1,5 @@
 <template>
-  <div id="header" class="d-flex align-items-center px-4">
+  <div id="header" class="d-flex align-items-center justify-content-between px-4">
     <ul class="nav">
       <li class="nav-item mr-4">
         <router-link to="/">Home</router-link>
@@ -8,6 +8,14 @@
         <router-link to="/cart">Cart<span v-if="itemCount > 0">({{ itemCount }})</span></router-link>
       </li>
     </ul>
+    <div>
+      <div class="input-group input-group-sm">
+        <input class="rounded float-right px-2" type="text" placeholder="Search..">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

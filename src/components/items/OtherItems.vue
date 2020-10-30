@@ -3,7 +3,7 @@
     <img :src="item.image_path" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ item.name }}</h5>
-      <h5 class="card-title">${{ item.price }}</h5>
+      <h5 class="card-title">${{ item.price.toLocaleString() }}</h5>
       <router-link :to="'/item/' + item.id" class="btn btn-info mr-2">Details</router-link>
       <AddToCartBtn :item="item"/>
     </div>

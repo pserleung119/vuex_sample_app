@@ -4,7 +4,7 @@ function filterItemProperty(item) {
   if (!item) {
     return new Item()
   }
-  return new Item(item.name, item.price)
+  return new Item(item.name, item.price.toLocaleString())
 }
 
 function calculateTotalPrice(items) {

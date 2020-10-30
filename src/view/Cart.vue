@@ -5,8 +5,8 @@
       <button class="btn btn-success ml-1" @click="addItem()">+</button>
     </div>
   
-    <h3 class="text-white mb-4">Item Count: {{ itemCount }}</h3>
-    <h3 class="text-white mb-4">Item Price: {{ totalPrice }}</h3>
+    <h3 class="text-white mb-4">Item Count: {{ itemCount.toLocaleString() }}</h3>
+    <h3 class="text-white mb-4">Item Price: {{ totalPrice.toLocaleString() }}</h3>
     <div class="col d-flex flex-column justify-content-center">
       <CartItems v-for="(item, index) in items" v-bind:key="index" :item="item" :index="index"/>
     </div>

@@ -4,7 +4,7 @@
       <div class="item-img" :style="`background-image: url(${item.image_path})`"></div>
       <div class="col d-flex flex-column align-items-start">
         <h4 class="text-left text-white">{{ item.name }}</h4>
-        <h5 class="text-left text-danger">${{ item.price }}</h5>
+        <h5 class="text-left text-danger">${{ item.price.toLocaleString() }}</h5>
         <AddToCartBtn :item="item"/>
       </div>
       

@@ -3,7 +3,7 @@
     <img :src="item.image_path" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title">{{ item.name }}</h4>
-      <h4 class="card-title">${{ price }}</h4>
+      <h4 class="card-title">${{ item.price }}</h4>
       <router-link :to="'/item/' + item.id" class="btn btn-info mr-2">Details</router-link>
       <AddToCartBtn :item="item"/>
     </div>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { priceDelimiter } from '@/utils/price.js'
 import AddToCartBtn from './AddToCartBtn'
 
 export default {
@@ -22,11 +21,6 @@ export default {
     item: {
       type: Object,
       required: true
-    }
-  },
-  computed: {
-    price() {
-      return priceDelimiter(this.item.price)
     }
   },
   methods: {

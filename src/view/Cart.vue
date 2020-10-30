@@ -14,8 +14,7 @@
 </template>
 
 <script>
-import { priceDelimiter } from '@/utils/price.js'
-import CartItems from '@/components/items/CartItems'
+import CartItems from '../components/items/CartItems'
 
 export default {
   name: 'Index',
@@ -30,7 +29,7 @@ export default {
       return this.$store.getters.cart
     },
     totalPrice() {
-      return priceDelimiter(this.$store.getters.price)
+      return this.$store.getters.price
     }
   },
   methods: {

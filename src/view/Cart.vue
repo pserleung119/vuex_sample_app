@@ -5,6 +5,7 @@
       <div class="col text-left">
         <p class="text-white text-left">Item Count: {{ itemCount.toLocaleString() }}</p>
         <p class="text-white text-left">Item Price: {{ totalPrice.toLocaleString() }}</p>
+        <router-link to="/payment" class="btn btn-sm btn-primary mb-3">Purchase</router-link>
         <button class="btn btn-sm btn-danger ml-1 mb-3" @click="emptyCart()" :disabled="itemCount == 0">Empty Cart</button>
       </div>
     </div>

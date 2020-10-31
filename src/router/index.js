@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Index from '../view/Index'
 import Cart from '../view/Cart'
 import Item from '../view/Item'
+import Payment from '../view/Payment'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/item/:id',
     name: 'Item',
     component: Item
+  },
+  {
+    path: '/payment',
+    name: 'Payment',
+    component: Payment
   }
 ]
 

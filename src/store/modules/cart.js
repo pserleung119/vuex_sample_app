@@ -35,6 +35,9 @@ const actions = {
   },
   deleteItem ({ commit }, index = null) {
     commit('deleteItem', index)
+  },
+  emptyCart({ commit }) {
+    commit('emptyCart')
   }
 }
 
@@ -48,6 +51,9 @@ const mutations = {
     } else {
       state.items.pop()
     }
+  },
+  emptyCart (state) {
+    state.items = []
   }
 }
 
